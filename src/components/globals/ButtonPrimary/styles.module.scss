@@ -1,0 +1,31 @@
+@import '../../../styles/main.scss';
+
+.custom-boton-primary {
+	background-color: $macro-yellow;
+	color: $macro-blue !important;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	width: 180px;
+	height: 50px;
+
+	&:not(:disabled):hover {
+		background-color: $macro-blue !important;
+		color: $macro-yellow !important;
+	}
+
+	&.width-large {
+		width: 300px;
+	}
+
+	&.button-drawer:not(:disabled) {
+		background-color: #ffff;
+		color: $macro-blue !important;
+		border: 1px solid $macro-blue;
+
+		&:hover {
+			background-color: $macro-blue !important;
+			color: $macro-yellow !important;
+		}
+	}
+}

@@ -1,0 +1,17 @@
+.ant-input-number-input-wrap,
+.ant-input-number-input {
+	width: 120px;
+	margin: 5px;
+
+	:where(.css-dev-only-do-not-override-3rel02).ant-input-number-group-wrapper-outlined .ant-input-number-group-addon {
+        background: rgba(0, 0, 0, 0.02);
+        border: 1px solid #e40c0c;
+    }
+	input {
+		height: 40px !important;
+	}
+}
+
+// .ant-input-number-group-wrapper-outlined .ant-input-number-group-addon {
+
+// }

@@ -1,0 +1,14 @@
+.wrapperSelect {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.custom-select {
+	height: 50px;
+	width: 250px;
+
+	&.full-width {
+		width: 100% !important;
+	}
+}
