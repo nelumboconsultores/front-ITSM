@@ -1,32 +1,36 @@
-'use client'
-import React from 'react';
-import { Checkbox, Col, Row } from 'antd';
-import type { CheckboxProps } from 'antd';
-import styles from './styles.module.scss';
+"use client";
+import React from "react";
+import { Checkbox, Col, Row } from "antd";
+import type { CheckboxProps } from "antd";
 
-const onChange: CheckboxProps['onChange'] = (e) => {
-    console.log(`checked = ${e.target.checked}`);
+import styles from "./styles.module.scss";
+
+const onChange: CheckboxProps["onChange"] = (e) => {
+  console.log(`checked = ${e.target.checked}`);
 };
 
-const CustomCheckBox = ({ title, amountChecks }: { title: String, amountChecks: String[] }) => {
-
-    return (
-        <Row gutter={[10, 10]} className={styles['custom-checkbox']}>
-            <Col>
-                <h3>{title?.toUpperCase()}</h3>
+const CustomCheckBox = ({
+  title,
+  amountChecks,
+}: {
+  title: string;
+  amountChecks: string[];
+}) => {
+  return (
+    <Row gutter={[10, 10]} className={styles["custom-checkbox"]}>
+      <Col>
+        <h3>{title?.toUpperCase()}</h3>
+      </Col>
+      {amountChecks?.length &&
+        amountChecks.map((check: string, index: any) => {
+          return (
+            <Col key={index}>
+              <Checkbox onChange={onChange}>{check}</Checkbox>
             </Col>
-            {amountChecks?.length && amountChecks.map((check: String, index: any) => {
-
-                return (
-                    <Col key={index}>
-                        <Checkbox onChange={onChange}>
-                            {check}
-                        </Checkbox>
-                    </Col>
-                )
-            })}
-        </Row>
-    )
+          );
+        })}
+    </Row>
+  );
 };
 
 export default CustomCheckBox;

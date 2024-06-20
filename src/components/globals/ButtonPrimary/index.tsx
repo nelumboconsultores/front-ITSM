@@ -1,17 +1,23 @@
-'use client'
-import React from 'react';
-import { Button } from 'antd';
-import styles from './styles.module.scss';
-import clsx from 'clsx';
+"use client";
+import React from "react";
+import { Button } from "antd";
+import { clsx } from "clsx";
 
-export const CustomButtonText = ({ text, width, buttonDrawer }: { text: String | undefined, width?: Boolean | undefined, buttonDrawer?: Boolean }) => {
+import styles from "./styles.module.scss";
 
-  const buttonClass = clsx(styles['custom-boton-primary'], {
-    [styles['width-large']]: width,
-    [styles['button-drawer']]: buttonDrawer,
+export const CustomButtonText = ({
+  text,
+  width,
+  buttonDrawer,
+}: {
+  text: string | undefined;
+  width?: boolean | undefined;
+  buttonDrawer?: boolean;
+}) => {
+  const buttonClass = clsx(styles["custom-boton-primary"], {
+    [styles["width-large"]]: width,
+    [styles["button-drawer"]]: buttonDrawer,
   });
 
-  return (
-    <Button className={buttonClass} >{text}</Button>
-  )
-}
+  return <Button className={buttonClass}>{text}</Button>;
+};
